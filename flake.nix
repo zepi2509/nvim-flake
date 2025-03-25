@@ -16,7 +16,7 @@
         name = system;
         value = with import nixpkgs { inherit system; config.allowUnfree = true;}; rec {
           latest = pkgs.callPackage (import ./nvim/appimage-default.nix) { src = inputs.appimage-file-latest; pname = "nvim"; version = "latest"; };
-          nightly = pkgs.callPackage (import ./nvim/appimage-default.nix) { src = inputs.appimage-file-twilight; pname = "nvim"; version = "nightly"; };
+          nightly = pkgs.callPackage (import ./nvim/appimage-default.nix) { src = inputs.appimage-file-nightly; pname = "nvim"; version = "nightly"; };
           default = latest;
         };
       })[ "x86_64-linux" ]);
